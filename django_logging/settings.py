@@ -30,7 +30,7 @@ class DjangoLoggingSettings(object):
         )
 
         try:
-            self.__settings['LOG_PATH'] = os.path.join(django_settings.BASE_DIR, 'logs')
+            self.__settings['LOG_PATH'] = os.path.join(str(django_settings.BASE_DIR), 'logs')
         except AttributeError:
             raise ImproperlyConfigured('settings.BASE_DIR is note defined. Please define settings.BASE_DIR or override '
                                        'django_logging.LOG_PATH')
